@@ -13,4 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 3002
 
 # run the command
-CMD ["python", "./order.py"]
+ENTRYPOINT ["python3"]
+CMD ["order.py"]
