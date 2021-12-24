@@ -10,7 +10,7 @@ import logging
 
 app 	= Flask(__name__)
 
-kafka_server = 'http://kafka-route-my-kafka-project.apps-crc.testing'
+kafka_server = 'my-cluster-kafka-bootstrap:9092'
 
 @app.route('/')
 def hello():
