@@ -10,6 +10,7 @@ import logging
 
 app 	= Flask(__name__)
 
+kafka_server = 'http://kafka-route-my-kafka-project.apps-crc.testing'
 
 @app.route('/')
 def hello():
@@ -18,7 +19,7 @@ def hello():
 @app.route('/order')
 def orderTransaction():
 	logging.info('order topic')
-	producer 			= KafkaProducer(bootstrap_servers='kafka.kafka-ca1:9092',
+	producer 			= KafkaProducer(bootstrap_servers=kafka_server,
 								value_serializer=lambda v: json.dumps(v).encode('utf-8')
 						  )
 	params_dict = request.args.to_dict()
@@ -36,7 +37,7 @@ def orderTransaction():
 @app.route('/dispatch')
 def dispatchTransaction():
 	logging.info('dispatch topic')
-	producer 			= KafkaProducer(bootstrap_servers='kafka.kafka-ca1:9092',
+	producer 			= KafkaProducer(bootstrap_servers=kafka_server,
 								value_serializer=lambda v: json.dumps(v).encode('utf-8')
 						  )
 	params_dict = request.args.to_dict()
@@ -54,7 +55,7 @@ def dispatchTransaction():
 @app.route('/delivery')
 def deliveryTransaction():
 	logging.info('delivery topic')
-	producer 			= KafkaProducer(bootstrap_servers='kafka.kafka-ca1:9092',
+	producer 			= KafkaProducer(bootstrap_servers=kafka_server,
 								value_serializer=lambda v: json.dumps(v).encode('utf-8')
 						  )
 	params_dict = request.args.to_dict()
@@ -72,7 +73,7 @@ def deliveryTransaction():
 @app.route('/charge')
 def chargeTransaction():
 	logging.info('charge topic')
-	producer 			= KafkaProducer(bootstrap_servers='kafka.kafka-ca1:9092',
+	producer 			= KafkaProducer(bootstrap_servers=kafka_server,
 								value_serializer=lambda v: json.dumps(v).encode('utf-8')
 						  )
 	params_dict = request.args.to_dict()
