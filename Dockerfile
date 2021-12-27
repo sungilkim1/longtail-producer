@@ -1,5 +1,4 @@
-FROM python:3.8.0
-RUN pip install confluent_kafka
+FROM python:3
 
 # set a directory for the app
 WORKDIR /app
