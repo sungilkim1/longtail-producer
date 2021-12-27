@@ -1,4 +1,5 @@
-FROM python:3
+FROM python:3.8.0
+RUN pip install confluent_kafka
 
 # set a directory for the app
 WORKDIR /app
@@ -8,7 +9,6 @@ COPY . .
 
 # install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-binary :all: confluent-kafka
 
 # tell the port number the container should expose
 EXPOSE 3002
