@@ -18,6 +18,7 @@ ENV LD_LIBRARY_PATH /usr/local/lib
 
 # install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-binary :all: confluent-kafka
 
 # tell the port number the container should expose
 EXPOSE 3002

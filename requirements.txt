@@ -1,5 +1,2 @@
 Flask
 kafka-python==2.0.1
-requests
-certifi
-confluent-kafka[avro,json,protobuf]>=1.4.2
