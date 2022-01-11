@@ -12,7 +12,7 @@ import logging
 
 app 	= Flask(__name__)
 
-kafka_server = 'my-cluster-kafka-bootstrap.my-kafka-project:9092'
+kafka_server = 'bootstrap.kafka:9092'
 
 @app.route('/')
 def hello():
